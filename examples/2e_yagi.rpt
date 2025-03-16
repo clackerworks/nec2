@@ -1,0 +1,15 @@
+.nr HM 0.5i
+Radiation Pattern for 2 Element Yagi Antenna
+.sp 
+---Vertical E(theta)---
+.necstart
+	pic scale = 1.25
+	necdataf ../examples/2e_yagi.out
+	rp vertical etheta max
+.necend
+.sp 
+---Horizontal E(theta)---
+.necstart
+	necdataf ../examples/2e_yagi.out
+	rp horizontal etheta max
+.necend  

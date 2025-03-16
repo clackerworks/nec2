@@ -1,0 +1,6 @@
+#!/bin/rc
+
+awklib = $home/lib/awk
+awk -f $awklib/nec2tr.awk $*
+
+

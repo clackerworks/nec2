@@ -1,0 +1,9 @@
+#!/bin/rc
+
+# Helper script 
+# usage: nec2 <file> | rpplot <options> | plot
+#		 cat file.out | rpplot <options> | plot
+
+awklib = $home/lib/awk
+awk -f $awklib/rpplot.awk - $1 $2
+

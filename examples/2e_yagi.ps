@@ -1,0 +1,1443 @@
+%!PS-Adobe-2.0
+%%Version: 0.1
+%%DocumentFonts: (atend)
+%%Pages: (atend)
+%%EndComments
+%
+% Version 3.3.2 prologue for troff files.
+%
+
+/#copies 1 store
+/aspectratio 1 def
+/formsperpage 1 def
+/landscape false def
+/linewidth .3 def
+/magnification 1 def
+/margin 0 def
+/orientation 0 def
+/resolution 720 def
+/rotation 1 def
+/xoffset 0 def
+/yoffset 0 def
+
+/roundpage true def
+/useclippath true def
+/pagebbox [0 0 612 792] def
+
+/R  /Times-Roman def
+/I  /Times-Italic def
+/B  /Times-Bold def
+/BI /Times-BoldItalic def
+/H  /Helvetica def
+/HI /Helvetica-Oblique def
+/HB /Helvetica-Bold def
+/HX /Helvetica-BoldOblique def
+/CW /Courier def
+/CO /Courier def
+/CI /Courier-Oblique def
+/CB /Courier-Bold def
+/CX /Courier-BoldOblique def
+/PA /Palatino-Roman def
+/PI /Palatino-Italic def
+/PB /Palatino-Bold def
+/PX /Palatino-BoldItalic def
+/Hr /Helvetica-Narrow def
+/Hi /Helvetica-Narrow-Oblique def
+/Hb /Helvetica-Narrow-Bold def
+/Hx /Helvetica-Narrow-BoldOblique def
+/KR /Bookman-Light def
+/KI /Bookman-LightItalic def
+/KB /Bookman-Demi def
+/KX /Bookman-DemiItalic def
+/AR /AvantGarde-Book def
+/AI /AvantGarde-BookOblique def
+/AB /AvantGarde-Demi def
+/AX /AvantGarde-DemiOblique def
+/NR /NewCenturySchlbk-Roman def
+/NI /NewCenturySchlbk-Italic def
+/NB /NewCenturySchlbk-Bold def
+/NX /NewCenturySchlbk-BoldItalic def
+/ZD /ZapfDingbats def
+/ZI /ZapfChancery-MediumItalic def
+/S  /S def
+/S1 /S1 def
+/GR /Symbol def
+
+/inch {72 mul} bind def
+/min {2 copy gt {exch} if pop} bind def
+
+/setup {
+	counttomark 2 idiv {def} repeat pop
+
+	landscape {/orientation 90 orientation add def} if
+	/scaling 72 resolution div def
+	linewidth setlinewidth
+	1 setlinecap
+
+	pagedimensions
+	xcenter ycenter translate
+	orientation rotation mul rotate
+	width 2 div neg height 2 div translate
+	xoffset inch yoffset inch neg translate
+	margin 2 div dup neg translate
+	magnification dup aspectratio mul scale
+	scaling scaling scale
+
+	addmetrics
+	0 0 moveto
+} def
+
+/pagedimensions {
+	useclippath userdict /gotpagebbox known not and {
+		/pagebbox [clippath pathbbox newpath] def
+		roundpage currentdict /roundpagebbox known and {roundpagebbox} if
+	} if
+	pagebbox aload pop
+	4 -1 roll exch 4 1 roll 4 copy
+	landscape {4 2 roll} if
+	sub /width exch def
+	sub /height exch def
+	add 2 div /xcenter exch def
+	add 2 div /ycenter exch def
+	userdict /gotpagebbox true put
+} def
+
+/addmetrics {
+	/Symbol /S null Sdefs cf
+	/Times-Roman /S1 StandardEncoding dup length array copy S1defs cf
+} def
+
+/pagesetup {
+	/page exch def
+	currentdict /pagedict known currentdict page known and {
+		page load pagedict exch get cvx exec
+	} if
+} def
+
+/decodingdefs [
+	{counttomark 2 idiv {y moveto show} repeat}
+	{neg /y exch def counttomark 2 idiv {y moveto show} repeat}
+	{neg moveto {2 index stringwidth pop sub exch div 0 32 4 -1 roll widthshow} repeat}
+	{neg moveto {spacewidth sub 0.0 32 4 -1 roll widthshow} repeat}
+	{counttomark 2 idiv {y moveto show} repeat}
+	{neg setfunnytext}
+] def
+
+/setdecoding {/t decodingdefs 3 -1 roll get bind def} bind def
+
+/w {neg moveto show} bind def
+/m {neg dup /y exch def moveto} bind def
+/done {/lastpage where {pop lastpage} if} def
+
+/f {
+	dup /font exch def findfont exch
+	dup /ptsize exch def scaling div dup /size exch def scalefont setfont
+	linewidth ptsize mul scaling 10 mul div setlinewidth
+	/spacewidth ( ) stringwidth pop def
+} bind def
+
+/changefont {
+	/fontheight exch def
+	/fontslant exch def
+	currentfont [
+		1 0
+		fontheight ptsize div fontslant sin mul fontslant cos div
+		fontheight ptsize div
+		0 0
+	] makefont setfont
+} bind def
+
+/sf {f} bind def
+
+/cf {
+	dup length 2 idiv
+	/entries exch def
+	/chtab exch def
+	/newencoding exch def
+	/newfont exch def
+
+	findfont dup length 1 add dict
+	/newdict exch def
+	{1 index /FID ne {newdict 3 1 roll put}{pop pop} ifelse} forall
+
+	newencoding type /arraytype eq {newdict /Encoding newencoding put} if
+
+	newdict /Metrics entries dict put
+	newdict /Metrics get
+	begin
+		chtab aload pop
+		1 1 entries {pop def} for
+		newfont newdict definefont pop
+	end
+} bind def
+
+%
+% A few arrays used to adjust reference points and character widths in some
+% of the printer resident fonts. If square roots are too high try changing
+% the lines describing /radical and /radicalex to,
+%
+%	/radical	[0 -75 550 0]
+%	/radicalex	[-50 -75 500 0]
+%
+% Move braceleftbt a bit - default PostScript character is off a bit.
+%
+
+/Sdefs [
+	/bracketlefttp		[201 500]
+	/bracketleftbt		[201 500]
+	/bracketrighttp		[-81 380]
+	/bracketrightbt		[-83 380]
+	/braceleftbt		[203 490]
+	/bracketrightex		[220 -125 500 0]
+	/radical		[0 0 550 0]
+	/radicalex		[-50 0 500 0]
+	/parenleftex		[-20 -170 0 0]
+	/integral		[100 -50 500 0]
+	/infinity		[10 -75 730 0]
+] def
+
+/S1defs [
+	/underscore		[0 80 500 0]
+	/endash			[7 90 650 0]
+] def
+%
+% Version 3.3.2 drawing procedures for dpost. Automatically pulled in when
+% needed.
+%
+
+/inpath false def
+/savematrix matrix def
+
+/Dl {
+	inpath
+		{neg lineto pop pop}
+		{newpath neg moveto neg lineto stroke}
+	ifelse
+} bind def
+
+/De {
+	/y1 exch 2 div def
+	/x1 exch 2 div def
+	/savematrix savematrix currentmatrix def
+	neg exch x1 add exch translate
+	x1 y1 scale
+	0 0 1 0 360
+	inpath
+		{1 0 moveto arc savematrix setmatrix}
+		{newpath arc savematrix setmatrix stroke}
+	ifelse
+} bind def
+
+/Da {
+	/dy2 exch def
+	/dx2 exch def
+	/dy1 exch def
+	/dx1 exch def
+	dy1 add neg exch dx1 add exch
+	dx1 dx1 mul dy1 dy1 mul add sqrt
+	dy1 dx1 neg atan
+	dy2 neg dx2 atan
+	inpath
+		{arc}
+		{newpath arc stroke}
+	ifelse
+} bind def
+
+/DA {
+	/dy2 exch def
+	/dx2 exch def
+	/dy1 exch def
+	/dx1 exch def
+	dy1 add neg exch dx1 add exch
+	dx1 dx1 mul dy1 dy1 mul add sqrt
+	dy1 dx1 neg atan
+	dy2 neg dx2 atan
+	inpath
+		{arcn}
+		{newpath arcn stroke}
+	ifelse
+} bind def
+
+/Ds {
+	/y2 exch def
+	/x2 exch def
+	/y1 exch def
+	/x1 exch def
+	/y0 exch def
+	/x0 exch def
+	x0 5 x1 mul add 6 div
+	y0 5 y1 mul add -6 div
+	x2 5 x1 mul add 6 div
+	y2 5 y1 mul add -6 div
+	x1 x2 add 2 div
+	y1 y2 add -2 div
+	inpath
+		{curveto}
+		{newpath x0 x1 add 2 div y0 y1 add -2 div moveto curveto stroke}
+	ifelse
+} bind def
+%
+% Tries to round clipping path dimensions, as stored in array pagebbox, so they
+% match one of the known sizes in the papersizes array. Lower left coordinates
+% are always set to 0.
+%
+
+/roundpagebbox {
+    7 dict begin
+	/papersizes [8.5 inch 11 inch 14 inch 17 inch] def
+
+	/mappapersize {
+		/val exch def
+		/slop .5 inch def
+		/diff slop def
+		/j 0 def
+		0 1 papersizes length 1 sub {
+			/i exch def
+			papersizes i get val sub abs
+			dup diff le {/diff exch def /j i def} {pop} ifelse
+		} for
+		diff slop lt {papersizes j get} {val} ifelse
+	} def
+
+	pagebbox 0 0 put
+	pagebbox 1 0 put
+	pagebbox dup 2 get mappapersize 2 exch put
+	pagebbox dup 3 get mappapersize 3 exch put
+    end
+} bind def
+
+%%EndProlog
+%%BeginSetup
+mark
+%
+% Encoding vector and redefinition of findfont for the ISO Latin1 standard.
+% The 18 characters missing from ROM based fonts on older printers are noted
+% below.
+%
+
+/ISOLatin1Encoding [
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/space
+	/exclam
+	/quotedbl
+	/numbersign
+	/dollar
+	/percent
+	/ampersand
+	/quoteright
+	/parenleft
+	/parenright
+	/asterisk
+	/plus
+	/comma
+	/minus
+	/period
+	/slash
+	/zero
+	/one
+	/two
+	/three
+	/four
+	/five
+	/six
+	/seven
+	/eight
+	/nine
+	/colon
+	/semicolon
+	/less
+	/equal
+	/greater
+	/question
+	/at
+	/A
+	/B
+	/C
+	/D
+	/E
+	/F
+	/G
+	/H
+	/I
+	/J
+	/K
+	/L
+	/M
+	/N
+	/O
+	/P
+	/Q
+	/R
+	/S
+	/T
+	/U
+	/V
+	/W
+	/X
+	/Y
+	/Z
+	/bracketleft
+	/backslash
+	/bracketright
+	/asciicircum
+	/underscore
+	/quoteleft
+	/a
+	/b
+	/c
+	/d
+	/e
+	/f
+	/g
+	/h
+	/i
+	/j
+	/k
+	/l
+	/m
+	/n
+	/o
+	/p
+	/q
+	/r
+	/s
+	/t
+	/u
+	/v
+	/w
+	/x
+	/y
+	/z
+	/braceleft
+	/bar
+	/braceright
+	/asciitilde
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/dotlessi
+	/grave
+	/acute
+	/circumflex
+	/tilde
+	/macron
+	/breve
+	/dotaccent
+	/dieresis
+	/.notdef
+	/ring
+	/cedilla
+	/.notdef
+	/hungarumlaut
+	/ogonek
+	/caron
+	/space
+	/exclamdown
+	/cent
+	/sterling
+	/currency
+	/yen
+	/brokenbar		% missing
+	/section
+	/dieresis
+	/copyright
+	/ordfeminine
+	/guillemotleft
+	/logicalnot
+	/hyphen
+	/registered
+	/macron
+	/degree			% missing
+	/plusminus		% missing
+	/twosuperior		% missing
+	/threesuperior		% missing
+	/acute
+	/mu			% missing
+	/paragraph
+	/periodcentered
+	/cedilla
+	/onesuperior		% missing
+	/ordmasculine
+	/guillemotright
+	/onequarter		% missing
+	/onehalf		% missing
+	/threequarters		% missing
+	/questiondown
+	/Agrave
+	/Aacute
+	/Acircumflex
+	/Atilde
+	/Adieresis
+	/Aring
+	/AE
+	/Ccedilla
+	/Egrave
+	/Eacute
+	/Ecircumflex
+	/Edieresis
+	/Igrave
+	/Iacute
+	/Icircumflex
+	/Idieresis
+	/Eth			% missing
+	/Ntilde
+	/Ograve
+	/Oacute
+	/Ocircumflex
+	/Otilde
+	/Odieresis
+	/multiply		% missing
+	/Oslash
+	/Ugrave
+	/Uacute
+	/Ucircumflex
+	/Udieresis
+	/Yacute			% missing
+	/Thorn			% missing
+	/germandbls
+	/agrave
+	/aacute
+	/acircumflex
+	/atilde
+	/adieresis
+	/aring
+	/ae
+	/ccedilla
+	/egrave
+	/eacute
+	/ecircumflex
+	/edieresis
+	/igrave
+	/iacute
+	/icircumflex
+	/idieresis
+	/eth			% missing
+	/ntilde
+	/ograve
+	/oacute
+	/ocircumflex
+	/otilde
+	/odieresis
+	/divide			% missing
+	/oslash
+	/ugrave
+	/uacute
+	/ucircumflex
+	/udieresis
+	/yacute			% missing
+	/thorn			% missing
+	/ydieresis
+] def
+
+/NewFontDirectory FontDirectory maxlength dict def
+
+%
+% Apparently no guarantee findfont is defined in systemdict so the obvious
+%
+%	systemdict /findfont get exec
+%
+% can generate an error. So far the only exception is a VT600 (version 48.0).
+%
+
+userdict /@RealFindfont known not {
+	userdict begin
+		/@RealFindfont systemdict begin /findfont load end def
+	end
+} if
+
+/findfont {
+	dup NewFontDirectory exch known not {
+		dup
+		%dup systemdict /findfont get exec	% not always in systemdict
+		dup userdict /@RealFindfont get exec
+		dup /Encoding get StandardEncoding eq {
+			dup length dict begin
+				{1 index /FID ne {def}{pop pop} ifelse} forall
+				/Encoding ISOLatin1Encoding def
+				currentdict
+			end
+			/DummyFontName exch definefont
+		} if
+		NewFontDirectory 3 1 roll put
+	} if
+	NewFontDirectory exch get
+} bind def
+
+%%Patch from lp
+%%EndPatch from lp
+
+setup
+%%EndSetup
+%%Page: 1 1
+/saveobj save def
+mark
+1 pagesetup
+10 /Times-Roman f
+(Radiation Pattern for 2 Element Yagi Antenna) 720 480 w
+(\255\255\255Vertical E\(theta\)\255\255\255) 720 720 w
+2736 2178 288 288 De
+2592 2178 576 576 De
+2448 2178 864 864 De
+2304 2178 1152 1152 De
+2160 2178 1440 1440 De
+2016 2178 1728 1728 De
+1872 2178 2016 2016 De
+1728 2178 2304 2304 De
+2880 1026 2880 3330 Dl
+9 /Helvetica-Bold f
+(90\260xy) 4058 2198 w
+4032 2178 1728 2178 Dl
+3157 2103 3991 1880 Dl
+2602 2252 1768 2475 Dl
+3004 2106 3876 1602 Dl
+2755 2250 1883 2754 Dl
+(60\260) 3934 1550 w
+3083 1974 3694 1363 Dl
+2676 2381 2065 2992 Dl
+2952 2053 3456 1181 Dl
+2808 2302 2304 3174 Dl
+(30\260) 3460 1075 w
+2954 1900 3177 1066 Dl
+2805 2455 2582 3289 Dl
+2880 2034 2880 1026 Dl
+2880 2322 2880 3330 Dl
+(0\260z) 2815 902 w
+2805 1900 2582 1066 Dl
+2954 2455 3177 3289 Dl
+2808 2053 2304 1181 Dl
+2952 2302 3456 3174 Dl
+(\25530\260) 2149 1075 w
+2676 1974 2065 1363 Dl
+3083 2381 3694 2992 Dl
+2755 2106 1883 1602 Dl
+3004 2250 3876 2754 Dl
+(\25560\260) 1674 1550 w
+2602 2103 1768 1880 Dl
+3157 2252 3991 2475 Dl
+(\25590\260) 1501 2198 w
+(\255120\260) 1649 2846 w
+(\255150\260) 2124 3320 w
+(\255180\260) 2772 3494 w
+(150\260) 3435 3320 w
+(120\260) 3909 2846 w
+2880 2178 2880 1026 Dl
+2880 1026 2860 1026 Dl
+2859 1026 2839 1027 Dl
+2839 1028 2819 1030 Dl
+2819 1030 2799 1032 Dl
+2800 1033 2781 1037 Dl
+2779 1037 2760 1042 Dl
+2760 1042 2741 1047 Dl
+2741 1048 2722 1054 Dl
+2722 1054 2704 1061 Dl
+2703 1062 2685 1070 Dl
+2684 1071 2666 1080 Dl
+2666 1080 2648 1090 Dl
+2648 1090 2631 1100 Dl
+2631 1101 2614 1112 Dl
+2614 1113 2598 1125 Dl
+2597 1125 2582 1137 Dl
+2581 1139 2566 1152 Dl
+2566 1152 2551 1166 Dl
+2551 1167 2537 1182 Dl
+2537 1182 2524 1197 Dl
+2523 1198 2511 1214 Dl
+2509 1214 2497 1231 Dl
+2497 1231 2485 1248 Dl
+2485 1249 2474 1267 Dl
+2474 1267 2464 1285 Dl
+2463 1285 2453 1303 Dl
+2453 1304 2444 1323 Dl
+2444 1323 2436 1342 Dl
+2436 1343 2429 1363 Dl
+2428 1363 2421 1383 Dl
+2421 1383 2415 1403 Dl
+2414 1404 2409 1424 Dl
+2409 1424 2404 1444 Dl
+2404 1445 2400 1465 Dl
+2400 1467 2397 1488 Dl
+2396 1488 2394 1509 Dl
+2394 1509 2392 1530 Dl
+2392 1530 2391 1551 Dl
+2391 1552 2391 1573 Dl
+2390 1573 2390 1594 Dl
+2391 1594 2391 1615 Dl
+2391 1616 2392 1636 Dl
+2393 1637 2395 1657 Dl
+2395 1658 2397 1678 Dl
+2398 1679 2401 1699 Dl
+2401 1699 2405 1719 Dl
+2406 1720 2411 1740 Dl
+2411 1740 2416 1760 Dl
+2416 1760 2421 1779 Dl
+2422 1780 2428 1799 Dl
+2429 1800 2436 1818 Dl
+2436 1818 2443 1836 Dl
+2443 1837 2450 1855 Dl
+2451 1855 2459 1873 Dl
+2460 1873 2469 1890 Dl
+2469 1890 2478 1906 Dl
+2478 1907 2488 1923 Dl
+2489 1923 2499 1938 Dl
+2499 1939 2509 1954 Dl
+2509 1955 2519 1970 Dl
+2520 1970 2531 1984 Dl
+2531 1985 2542 1998 Dl
+2543 1998 2554 2011 Dl
+2554 2012 2566 2024 Dl
+2566 2025 2578 2037 Dl
+2579 2037 2591 2048 Dl
+2591 2049 2603 2060 Dl
+2603 2060 2615 2070 Dl
+2615 2071 2627 2081 Dl
+2628 2081 2640 2090 Dl
+2641 2090 2653 2099 Dl
+2654 2100 2666 2108 Dl
+2666 2108 2678 2115 Dl
+2679 2116 2691 2123 Dl
+2692 2124 2704 2131 Dl
+2705 2131 2717 2137 Dl
+2718 2137 2730 2142 Dl
+2730 2143 2742 2148 Dl
+2743 2149 2755 2154 Dl
+2756 2154 2768 2158 Dl
+2768 2158 2780 2161 Dl
+2780 2162 2792 2165 Dl
+2792 2165 2803 2167 Dl
+2804 2168 2815 2170 Dl
+2815 2171 2826 2173 Dl
+2827 2173 2837 2174 Dl
+2838 2175 2848 2176 Dl
+2849 2176 2859 2176 Dl
+2859 2177 2869 2177 Dl
+2869 2178 2869 2178 Dl
+2870 2178 2861 2178 Dl
+2860 2178 2851 2178 Dl
+2851 2179 2843 2180 Dl
+2843 2180 2835 2181 Dl
+2834 2182 2827 2183 Dl
+2826 2183 2819 2185 Dl
+2818 2185 2811 2187 Dl
+2811 2187 2804 2189 Dl
+2804 2190 2798 2192 Dl
+2797 2192 2791 2194 Dl
+2791 2195 2786 2197 Dl
+2784 2198 2779 2200 Dl
+2779 2201 2774 2203 Dl
+2774 2204 2769 2207 Dl
+2769 2207 2765 2210 Dl
+2764 2211 2760 2214 Dl
+2760 2214 2756 2217 Dl
+2756 2218 2753 2221 Dl
+2752 2221 2749 2224 Dl
+2749 2225 2747 2228 Dl
+2746 2229 2744 2232 Dl
+2743 2233 2741 2236 Dl
+2741 2237 2739 2240 Dl
+2738 2240 2736 2243 Dl
+2736 2244 2735 2247 Dl
+2735 2248 2734 2251 Dl
+2733 2252 2732 2255 Dl
+2732 2256 2732 2259 Dl
+2731 2260 2731 2263 Dl
+2730 2264 2730 2267 Dl
+2729 2268 2729 2272 Dl
+2729 2272 2729 2276 Dl
+2728 2275 2728 2279 Dl
+2728 2280 2728 2284 Dl
+2728 2284 2728 2288 Dl
+2728 2288 2728 2292 Dl
+2728 2292 2728 2296 Dl
+2728 2296 2728 2300 Dl
+2728 2301 2728 2305 Dl
+2728 2304 2728 2308 Dl
+2728 2309 2728 2313 Dl
+2728 2314 2728 2318 Dl
+2729 2318 2729 2322 Dl
+2729 2323 2729 2328 Dl
+2730 2327 2730 2332 Dl
+2730 2332 2730 2337 Dl
+2730 2337 2730 2342 Dl
+2731 2342 2731 2347 Dl
+2731 2348 2731 2353 Dl
+2732 2353 2732 2358 Dl
+2733 2359 2733 2364 Dl
+2733 2365 2733 2370 Dl
+2734 2370 2734 2375 Dl
+2735 2376 2735 2382 Dl
+2736 2383 2736 2389 Dl
+2737 2388 2738 2394 Dl
+2738 2395 2739 2401 Dl
+2740 2401 2741 2407 Dl
+2741 2408 2742 2414 Dl
+2743 2414 2744 2420 Dl
+2744 2422 2746 2428 Dl
+2746 2428 2748 2434 Dl
+2748 2435 2750 2441 Dl
+2751 2442 2753 2448 Dl
+2754 2448 2756 2454 Dl
+2756 2455 2758 2461 Dl
+2759 2461 2761 2467 Dl
+2762 2468 2765 2474 Dl
+2766 2474 2769 2480 Dl
+2769 2481 2772 2487 Dl
+2773 2486 2777 2491 Dl
+2777 2493 2781 2498 Dl
+2782 2499 2786 2504 Dl
+2786 2504 2791 2509 Dl
+2790 2509 2795 2514 Dl
+2795 2514 2800 2519 Dl
+2800 2520 2805 2524 Dl
+2806 2524 2811 2528 Dl
+2811 2528 2816 2531 Dl
+2817 2532 2822 2535 Dl
+2823 2536 2828 2539 Dl
+2828 2539 2833 2541 Dl
+2835 2542 2841 2544 Dl
+2841 2545 2847 2547 Dl
+2847 2547 2853 2548 Dl
+2854 2548 2860 2549 Dl
+2860 2550 2866 2550 Dl
+2867 2551 2873 2551 Dl
+2873 2551 2879 2551 Dl
+2880 2552 2886 2552 Dl
+2886 2551 2892 2551 Dl
+2892 2551 2898 2551 Dl
+2899 2550 2905 2549 Dl
+2905 2548 2911 2547 Dl
+2912 2547 2918 2545 Dl
+2918 2545 2924 2543 Dl
+2924 2542 2929 2540 Dl
+2931 2539 2936 2536 Dl
+2936 2536 2941 2533 Dl
+2942 2532 2947 2529 Dl
+2948 2528 2953 2524 Dl
+2953 2524 2958 2520 Dl
+2959 2520 2964 2515 Dl
+2964 2514 2969 2509 Dl
+2969 2509 2974 2504 Dl
+2973 2504 2977 2499 Dl
+2977 2499 2981 2494 Dl
+2982 2493 2986 2488 Dl
+2986 2486 2989 2480 Dl
+2990 2481 2993 2475 Dl
+2993 2474 2996 2468 Dl
+2997 2468 2999 2462 Dl
+3000 2461 3002 2455 Dl
+3003 2455 3005 2449 Dl
+3006 2448 3008 2442 Dl
+3008 2442 3010 2436 Dl
+3011 2435 3013 2429 Dl
+3013 2428 3015 2422 Dl
+3015 2422 3016 2416 Dl
+3016 2414 3017 2408 Dl
+3018 2408 3019 2402 Dl
+3019 2401 3020 2395 Dl
+3021 2395 3022 2389 Dl
+3022 2388 3022 2382 Dl
+3023 2383 3023 2377 Dl
+3024 2376 3024 2371 Dl
+3025 2370 3025 2365 Dl
+3026 2365 3026 2360 Dl
+3026 2359 3026 2354 Dl
+3027 2353 3027 2348 Dl
+3028 2348 3028 2343 Dl
+3028 2342 3028 2337 Dl
+3029 2337 3029 2332 Dl
+3029 2332 3029 2327 Dl
+3029 2327 3029 2322 Dl
+3030 2323 3030 2319 Dl
+3030 2318 3030 2314 Dl
+3031 2314 3031 2310 Dl
+3031 2309 3031 2305 Dl
+3031 2304 3031 2300 Dl
+3031 2301 3031 2297 Dl
+3031 2296 3031 2292 Dl
+3031 2292 3031 2288 Dl
+3031 2288 3031 2284 Dl
+3031 2284 3031 2280 Dl
+3031 2280 3031 2276 Dl
+3031 2275 3031 2271 Dl
+3030 2272 3030 2268 Dl
+3030 2268 3030 2265 Dl
+3029 2264 3029 2261 Dl
+3028 2260 3028 2257 Dl
+3027 2256 3026 2253 Dl
+3026 2252 3025 2249 Dl
+3024 2248 3023 2245 Dl
+3023 2244 3021 2241 Dl
+3021 2240 3019 2237 Dl
+3018 2237 3016 2234 Dl
+3016 2233 3014 2230 Dl
+3013 2229 3011 2226 Dl
+3010 2225 3007 2222 Dl
+3007 2221 3004 2218 Dl
+3003 2218 2999 2215 Dl
+2999 2214 2995 2211 Dl
+2995 2211 2991 2208 Dl
+2990 2207 2985 2204 Dl
+2985 2204 2980 2202 Dl
+2980 2201 2975 2199 Dl
+2975 2198 2970 2196 Dl
+2968 2195 2962 2193 Dl
+2962 2192 2956 2190 Dl
+2955 2190 2948 2188 Dl
+2948 2187 2941 2185 Dl
+2941 2185 2934 2183 Dl
+2933 2183 2926 2182 Dl
+2925 2182 2917 2181 Dl
+2916 2180 2908 2179 Dl
+2908 2179 2899 2179 Dl
+2899 2178 2890 2178 Dl
+2889 2178 2889 2178 Dl
+2890 2178 2900 2178 Dl
+2900 2177 2910 2177 Dl
+2910 2176 2920 2175 Dl
+2921 2175 2931 2174 Dl
+2932 2173 2943 2171 Dl
+2944 2171 2955 2169 Dl
+2955 2168 2966 2166 Dl
+2967 2165 2979 2162 Dl
+2979 2162 2991 2159 Dl
+2991 2158 3003 2154 Dl
+3003 2154 3015 2149 Dl
+3016 2149 3028 2144 Dl
+3029 2143 3041 2138 Dl
+3041 2137 3053 2131 Dl
+3054 2131 3066 2124 Dl
+3067 2124 3079 2117 Dl
+3080 2116 3092 2109 Dl
+3093 2108 3105 2100 Dl
+3105 2100 3117 2091 Dl
+3118 2090 3130 2081 Dl
+3131 2081 3143 2071 Dl
+3144 2071 3156 2061 Dl
+3156 2060 3168 2049 Dl
+3168 2049 3180 2038 Dl
+3180 2037 3192 2025 Dl
+3193 2025 3205 2013 Dl
+3205 2012 3216 1999 Dl
+3216 1998 3227 1985 Dl
+3228 1985 3239 1971 Dl
+3240 1970 3250 1955 Dl
+3250 1955 3260 1940 Dl
+3260 1939 3270 1924 Dl
+3270 1923 3280 1907 Dl
+3281 1907 3290 1891 Dl
+3290 1890 3299 1873 Dl
+3299 1873 3307 1855 Dl
+3308 1855 3315 1837 Dl
+3316 1837 3323 1819 Dl
+3323 1818 3330 1800 Dl
+3330 1800 3336 1781 Dl
+3337 1780 3342 1761 Dl
+3343 1760 3348 1740 Dl
+3348 1740 3353 1720 Dl
+3353 1720 3357 1700 Dl
+3358 1699 3361 1679 Dl
+3361 1679 3363 1659 Dl
+3364 1658 3366 1638 Dl
+3366 1637 3367 1617 Dl
+3368 1616 3368 1595 Dl
+3368 1594 3368 1573 Dl
+3369 1573 3369 1552 Dl
+3368 1552 3367 1531 Dl
+3367 1530 3365 1509 Dl
+3365 1509 3363 1488 Dl
+3363 1488 3360 1467 Dl
+3359 1467 3355 1447 Dl
+3355 1445 3350 1425 Dl
+3350 1424 3345 1404 Dl
+3345 1404 3339 1384 Dl
+3338 1383 3331 1363 Dl
+3331 1363 3324 1343 Dl
+3323 1343 3315 1324 Dl
+3315 1323 3306 1304 Dl
+3306 1304 3296 1286 Dl
+3296 1285 3286 1267 Dl
+3285 1267 3274 1249 Dl
+3274 1249 3262 1232 Dl
+3262 1231 3250 1214 Dl
+3250 1214 3238 1198 Dl
+3236 1198 3223 1183 Dl
+3222 1182 3208 1167 Dl
+3208 1167 3193 1153 Dl
+3193 1152 3178 1139 Dl
+3178 1139 3163 1127 Dl
+3162 1125 3146 1113 Dl
+3145 1113 3128 1102 Dl
+3128 1101 3111 1091 Dl
+3111 1090 3093 1080 Dl
+3093 1080 3075 1071 Dl
+3075 1071 3057 1063 Dl
+3056 1062 3038 1055 Dl
+3037 1054 3018 1048 Dl
+3018 1048 2999 1043 Dl
+2999 1042 2980 1037 Dl
+2980 1037 2961 1033 Dl
+2959 1033 2939 1031 Dl
+2940 1030 2920 1028 Dl
+2920 1028 2900 1027 Dl
+2900 1026 2880 1026 Dl
+10 /Times-Roman f
+(\255\255\255Horizontal E\(theta\)\255\255\255) 720 3792 w
+2736 5250 288 288 De
+2592 5250 576 576 De
+2448 5250 864 864 De
+2304 5250 1152 1152 De
+2160 5250 1440 1440 De
+2016 5250 1728 1728 De
+1872 5250 2016 2016 De
+1728 5250 2304 2304 De
+2880 4098 2880 6402 Dl
+9 /Helvetica-Bold f
+(0\260x) 4108 5270 w
+4032 5250 1728 5250 Dl
+3157 5175 3991 4952 Dl
+2602 5324 1768 5547 Dl
+3004 5178 3876 4674 Dl
+2755 5322 1883 5826 Dl
+(30\260) 3934 4622 w
+3083 5046 3694 4435 Dl
+2676 5453 2065 6064 Dl
+2952 5125 3456 4253 Dl
+2808 5374 2304 6246 Dl
+(60\260) 3460 4147 w
+2954 4972 3177 4138 Dl
+2805 5527 2582 6361 Dl
+2880 5106 2880 4098 Dl
+2880 5394 2880 6402 Dl
+(90\260y) 2787 3974 w
+2805 4972 2582 4138 Dl
+2954 5527 3177 6361 Dl
+2808 5125 2304 4253 Dl
+2952 5374 3456 6246 Dl
+(120\260) 2139 4147 w
+2676 5046 2065 4435 Dl
+3083 5453 3694 6064 Dl
+2755 5178 1883 4674 Dl
+3004 5322 3876 5826 Dl
+(150\260) 1664 4622 w
+2602 5175 1768 4952 Dl
+3157 5324 3991 5547 Dl
+(180\260) 1491 5270 w
+(210\260) 1664 5918 w
+(240\260) 2139 6392 w
+(270\260) 2787 6566 w
+(300\260) 3435 6392 w
+(330\260) 3909 5918 w
+2880 5250 2880 5250 Dl
+2880 5250 2880 5250 Dl
+2880 5250 2900 5250 Dl
+2900 5250 2920 5250 Dl
+2920 5248 2940 5247 Dl
+2940 5247 2960 5245 Dl
+2959 5244 2979 5242 Dl
+2980 5241 2999 5238 Dl
+2999 5237 3018 5233 Dl
+3019 5232 3038 5227 Dl
+3039 5227 3058 5222 Dl
+3057 5221 3075 5215 Dl
+3077 5215 3095 5208 Dl
+3096 5208 3114 5201 Dl
+3114 5200 3132 5192 Dl
+3132 5191 3150 5182 Dl
+3150 5182 3167 5172 Dl
+3168 5172 3185 5162 Dl
+3185 5162 3201 5152 Dl
+3201 5151 3217 5140 Dl
+3218 5139 3233 5127 Dl
+3234 5127 3249 5115 Dl
+3250 5115 3265 5103 Dl
+3265 5102 3279 5089 Dl
+3280 5088 3294 5074 Dl
+3294 5074 3307 5060 Dl
+3308 5059 3320 5044 Dl
+3321 5044 3333 5029 Dl
+3333 5028 3345 5013 Dl
+3345 5012 3356 4996 Dl
+3357 4995 3367 4979 Dl
+3368 4979 3378 4962 Dl
+3378 4962 3388 4945 Dl
+3388 4944 3397 4926 Dl
+3397 4926 3405 4908 Dl
+3406 4908 3413 4890 Dl
+3414 4890 3421 4872 Dl
+3421 4871 3427 4853 Dl
+3427 4851 3432 4832 Dl
+3433 4833 3438 4814 Dl
+3438 4813 3442 4794 Dl
+3443 4793 3446 4774 Dl
+3447 4774 3449 4754 Dl
+3450 4753 3452 4733 Dl
+3453 4734 3454 4714 Dl
+3454 4714 3454 4694 Dl
+3456 4694 3456 4674 Dl
+3456 4674 3456 4654 Dl
+3456 4653 3456 4633 Dl
+3454 4633 3453 4613 Dl
+3453 4613 3451 4593 Dl
+3450 4594 3448 4574 Dl
+3447 4573 3444 4554 Dl
+3443 4554 3439 4535 Dl
+3438 4534 3433 4515 Dl
+3433 4514 3428 4495 Dl
+3427 4496 3421 4478 Dl
+3421 4476 3414 4458 Dl
+3414 4458 3407 4440 Dl
+3406 4440 3398 4422 Dl
+3397 4421 3388 4403 Dl
+3388 4403 3378 4386 Dl
+3378 4386 3368 4369 Dl
+3368 4368 3358 4352 Dl
+3357 4352 3346 4336 Dl
+3345 4335 3333 4320 Dl
+3333 4319 3321 4304 Dl
+3321 4303 3309 4288 Dl
+3308 4288 3295 4274 Dl
+3294 4273 3280 4259 Dl
+3280 4260 3266 4247 Dl
+3265 4245 3250 4233 Dl
+3250 4232 3235 4220 Dl
+3234 4220 3219 4208 Dl
+3218 4208 3202 4197 Dl
+3201 4196 3185 4186 Dl
+3185 4185 3168 4175 Dl
+3168 4175 3151 4165 Dl
+3150 4165 3132 4156 Dl
+3132 4156 3114 4148 Dl
+3114 4147 3096 4140 Dl
+3096 4139 3078 4132 Dl
+3077 4132 3059 4126 Dl
+3057 4126 3038 4121 Dl
+3039 4120 3020 4115 Dl
+3019 4115 3000 4111 Dl
+2999 4110 2980 4107 Dl
+2980 4106 2960 4104 Dl
+2959 4103 2939 4101 Dl
+2940 4100 2920 4099 Dl
+2920 4099 2900 4099 Dl
+2900 4098 2880 4098 Dl
+2880 4098 2860 4098 Dl
+2859 4098 2839 4098 Dl
+2839 4099 2819 4100 Dl
+2819 4100 2799 4102 Dl
+2800 4103 2780 4105 Dl
+2779 4106 2760 4109 Dl
+2760 4110 2741 4114 Dl
+2740 4115 2721 4120 Dl
+2720 4120 2701 4125 Dl
+2702 4126 2684 4132 Dl
+2682 4132 2664 4139 Dl
+2664 4139 2646 4146 Dl
+2646 4147 2628 4155 Dl
+2627 4156 2609 4165 Dl
+2609 4165 2592 4175 Dl
+2592 4175 2575 4185 Dl
+2574 4185 2558 4195 Dl
+2558 4196 2542 4207 Dl
+2541 4208 2526 4220 Dl
+2525 4220 2510 4232 Dl
+2509 4232 2494 4244 Dl
+2494 4245 2480 4258 Dl
+2479 4260 2465 4274 Dl
+2466 4273 2453 4287 Dl
+2451 4288 2439 4303 Dl
+2438 4303 2426 4318 Dl
+2426 4319 2414 4334 Dl
+2414 4335 2403 4351 Dl
+2402 4352 2392 4368 Dl
+2391 4368 2381 4385 Dl
+2381 4386 2371 4403 Dl
+2371 4403 2362 4421 Dl
+2362 4421 2354 4439 Dl
+2353 4440 2346 4458 Dl
+2345 4458 2338 4476 Dl
+2338 4476 2332 4494 Dl
+2332 4496 2327 4515 Dl
+2326 4514 2321 4533 Dl
+2321 4534 2317 4553 Dl
+2316 4554 2313 4573 Dl
+2312 4573 2310 4593 Dl
+2309 4594 2307 4614 Dl
+2306 4613 2305 4633 Dl
+2305 4633 2305 4653 Dl
+2304 4653 2304 4673 Dl
+2304 4674 2304 4694 Dl
+2304 4694 2304 4714 Dl
+2305 4714 2306 4734 Dl
+2306 4734 2308 4754 Dl
+2309 4753 2311 4773 Dl
+2312 4774 2315 4793 Dl
+2316 4793 2320 4812 Dl
+2321 4813 2326 4832 Dl
+2326 4833 2331 4852 Dl
+2332 4851 2338 4869 Dl
+2338 4871 2345 4889 Dl
+2345 4890 2352 4908 Dl
+2353 4908 2361 4926 Dl
+2362 4926 2371 4944 Dl
+2371 4944 2381 4961 Dl
+2381 4962 2391 4979 Dl
+2391 4979 2401 4995 Dl
+2402 4995 2413 5011 Dl
+2414 5012 2426 5027 Dl
+2426 5028 2438 5043 Dl
+2438 5044 2450 5059 Dl
+2451 5059 2464 5073 Dl
+2466 5074 2480 5088 Dl
+2479 5088 2493 5101 Dl
+2494 5102 2509 5114 Dl
+2509 5115 2524 5127 Dl
+2525 5127 2540 5139 Dl
+2541 5139 2557 5150 Dl
+2558 5151 2574 5161 Dl
+2574 5162 2591 5172 Dl
+2592 5172 2609 5182 Dl
+2609 5182 2627 5191 Dl
+2627 5191 2645 5199 Dl
+2646 5200 2664 5207 Dl
+2664 5208 2682 5215 Dl
+2682 5215 2700 5221 Dl
+2702 5221 2721 5226 Dl
+2720 5227 2739 5232 Dl
+2740 5232 2759 5236 Dl
+2760 5237 2779 5240 Dl
+2779 5241 2799 5243 Dl
+2800 5244 2820 5246 Dl
+2819 5247 2839 5248 Dl
+2839 5248 2859 5248 Dl
+2859 5250 2879 5250 Dl
+2880 5250 2860 5250 Dl
+2859 5250 2839 5250 Dl
+2839 5251 2819 5252 Dl
+2819 5252 2799 5254 Dl
+2800 5255 2780 5257 Dl
+2779 5258 2760 5261 Dl
+2760 5262 2741 5266 Dl
+2740 5267 2721 5272 Dl
+2720 5272 2701 5277 Dl
+2702 5278 2684 5284 Dl
+2682 5284 2664 5291 Dl
+2664 5291 2646 5298 Dl
+2646 5299 2628 5307 Dl
+2627 5308 2609 5317 Dl
+2609 5317 2592 5327 Dl
+2592 5327 2575 5337 Dl
+2574 5337 2558 5347 Dl
+2558 5348 2542 5359 Dl
+2541 5360 2526 5372 Dl
+2525 5372 2510 5384 Dl
+2509 5384 2494 5396 Dl
+2494 5397 2480 5410 Dl
+2479 5412 2465 5426 Dl
+2466 5425 2453 5439 Dl
+2451 5440 2439 5455 Dl
+2438 5455 2426 5470 Dl
+2426 5471 2414 5486 Dl
+2414 5487 2403 5503 Dl
+2402 5504 2392 5520 Dl
+2391 5520 2381 5537 Dl
+2381 5538 2371 5555 Dl
+2371 5555 2362 5573 Dl
+2362 5573 2354 5591 Dl
+2353 5592 2346 5610 Dl
+2345 5610 2338 5628 Dl
+2338 5628 2332 5646 Dl
+2332 5648 2327 5667 Dl
+2326 5666 2321 5685 Dl
+2321 5686 2317 5705 Dl
+2316 5706 2313 5725 Dl
+2312 5725 2310 5745 Dl
+2309 5746 2307 5766 Dl
+2306 5765 2305 5785 Dl
+2305 5785 2305 5805 Dl
+2304 5805 2304 5825 Dl
+2304 5826 2304 5846 Dl
+2304 5846 2304 5866 Dl
+2305 5866 2306 5886 Dl
+2306 5886 2308 5906 Dl
+2309 5905 2311 5925 Dl
+2312 5926 2315 5945 Dl
+2316 5945 2320 5964 Dl
+2321 5965 2326 5984 Dl
+2326 5985 2331 6004 Dl
+2332 6003 2338 6021 Dl
+2338 6023 2345 6041 Dl
+2345 6042 2352 6060 Dl
+2353 6060 2361 6078 Dl
+2362 6078 2371 6096 Dl
+2371 6096 2381 6113 Dl
+2381 6114 2391 6131 Dl
+2391 6131 2401 6147 Dl
+2402 6147 2413 6163 Dl
+2414 6164 2426 6179 Dl
+2426 6180 2438 6195 Dl
+2438 6196 2450 6211 Dl
+2451 6211 2464 6225 Dl
+2466 6226 2480 6240 Dl
+2479 6240 2493 6253 Dl
+2494 6254 2509 6266 Dl
+2509 6267 2524 6279 Dl
+2525 6279 2540 6291 Dl
+2541 6291 2557 6302 Dl
+2558 6303 2574 6313 Dl
+2574 6314 2591 6324 Dl
+2592 6324 2609 6334 Dl
+2609 6334 2627 6343 Dl
+2627 6343 2645 6351 Dl
+2646 6352 2664 6359 Dl
+2664 6360 2682 6367 Dl
+2682 6367 2700 6373 Dl
+2702 6373 2721 6378 Dl
+2720 6379 2739 6384 Dl
+2740 6384 2759 6388 Dl
+2760 6389 2779 6392 Dl
+2779 6393 2799 6395 Dl
+2800 6396 2820 6398 Dl
+2819 6399 2839 6400 Dl
+2839 6400 2859 6400 Dl
+2859 6402 2879 6402 Dl
+2880 6402 2900 6402 Dl
+2900 6402 2920 6402 Dl
+2920 6400 2940 6399 Dl
+2940 6399 2960 6397 Dl
+2959 6396 2979 6394 Dl
+2980 6393 2999 6390 Dl
+2999 6389 3018 6385 Dl
+3019 6384 3038 6379 Dl
+3039 6379 3058 6374 Dl
+3057 6373 3075 6367 Dl
+3077 6367 3095 6360 Dl
+3096 6360 3114 6353 Dl
+3114 6352 3132 6344 Dl
+3132 6343 3150 6334 Dl
+3150 6334 3167 6324 Dl
+3168 6324 3185 6314 Dl
+3185 6314 3201 6304 Dl
+3201 6303 3217 6292 Dl
+3218 6291 3233 6279 Dl
+3234 6279 3249 6267 Dl
+3250 6267 3265 6255 Dl
+3265 6254 3279 6241 Dl
+3280 6240 3294 6226 Dl
+3294 6226 3307 6212 Dl
+3308 6211 3320 6196 Dl
+3321 6196 3333 6181 Dl
+3333 6180 3345 6165 Dl
+3345 6164 3356 6148 Dl
+3357 6147 3367 6131 Dl
+3368 6131 3378 6114 Dl
+3378 6114 3388 6097 Dl
+3388 6096 3397 6078 Dl
+3397 6078 3405 6060 Dl
+3406 6060 3413 6042 Dl
+3414 6042 3421 6024 Dl
+3421 6023 3427 6005 Dl
+3427 6003 3432 5984 Dl
+3433 5985 3438 5966 Dl
+3438 5965 3442 5946 Dl
+3443 5945 3446 5926 Dl
+3447 5926 3449 5906 Dl
+3450 5905 3452 5885 Dl
+3453 5886 3454 5866 Dl
+3454 5866 3454 5846 Dl
+3456 5846 3456 5826 Dl
+3456 5826 3456 5806 Dl
+3456 5805 3456 5785 Dl
+3454 5785 3453 5765 Dl
+3453 5765 3451 5745 Dl
+3450 5746 3448 5726 Dl
+3447 5725 3444 5706 Dl
+3443 5706 3439 5687 Dl
+3438 5686 3433 5667 Dl
+3433 5666 3428 5647 Dl
+3427 5648 3421 5630 Dl
+3421 5628 3414 5610 Dl
+3414 5610 3407 5592 Dl
+3406 5592 3398 5574 Dl
+3397 5573 3388 5555 Dl
+3388 5555 3378 5538 Dl
+3378 5538 3368 5521 Dl
+3368 5520 3358 5504 Dl
+3357 5504 3346 5488 Dl
+3345 5487 3333 5472 Dl
+3333 5471 3321 5456 Dl
+3321 5455 3309 5440 Dl
+3308 5440 3295 5426 Dl
+3294 5425 3280 5411 Dl
+3280 5412 3266 5399 Dl
+3265 5397 3250 5385 Dl
+3250 5384 3235 5372 Dl
+3234 5372 3219 5360 Dl
+3218 5360 3202 5349 Dl
+3201 5348 3185 5338 Dl
+3185 5337 3168 5327 Dl
+3168 5327 3151 5317 Dl
+3150 5317 3132 5308 Dl
+3132 5308 3114 5300 Dl
+3114 5299 3096 5292 Dl
+3096 5291 3078 5284 Dl
+3077 5284 3059 5278 Dl
+3057 5278 3038 5273 Dl
+3039 5272 3020 5267 Dl
+3019 5267 3000 5263 Dl
+2999 5262 2980 5259 Dl
+2980 5258 2960 5256 Dl
+2959 5255 2939 5253 Dl
+2940 5252 2920 5251 Dl
+2920 5251 2900 5251 Dl
+2900 5250 2880 5250 Dl
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 1 1
+%%Trailer
+done
+%%DocumentFonts: Times-Roman Helvetica-Bold
+%%Pages: 1
