@@ -8,13 +8,13 @@ all:
 install:V:
 	cp nec2d $home/bin/386
 	cp somnec $home/bin/386
-	mkdir -p $home/lib/awk
-	cp tools/rpplot.awk $home/lib/awk
-	cp tools/rpplot $home/bin/rc
-	cp tools/nec2tr.awk $home/lib/awk
-	cp tools/nec2tr $home/bin/rc
-	cp tools/nec2 $home/bin/rc
-	cp tools/nec2.awk $home/lib/awk
+##	mkdir -p $home/lib/awk
+##	cp tools/rpplot.awk $home/lib/awk
+##	cp tools/rpplot $home/bin/rc
+##	cp tools/nec2tr.awk $home/lib/awk
+##	cp tools/nec2tr $home/bin/rc
+##	cp tools/nec2 $home/bin/rc
+##	cp tools/nec2.awk $home/lib/awk
 
 clean:V:
 	rm -f nec2d
